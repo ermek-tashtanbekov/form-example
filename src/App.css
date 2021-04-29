@@ -1,2 +1,32 @@
-
-
+form > div{
+    padding: .2rem 1rem;
+  
+  }
+   form > div > label{
+    margin-right: .5rem;
+  }
+  
+  form > div > label::after{
+    content: ":";
+  }
+  
+  
+  .error{
+    display: none;
+    color: tomato;
+    margin-left: .5rem;
+  }
+  
+  input:valid, 
+  select:valid{
+    border: 1px solid green;
+  }
+  
+  input:valid, 
+  select:valid{
+    border: 1px solid tomato;
+  }
+  input:valid + .error, 
+  select:valid + .error{
+   display: none;
+  }
