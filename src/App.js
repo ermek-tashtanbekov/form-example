@@ -1,5 +1,6 @@
 // import { useState } from "react";
-
+import axios from 'axios';
+import './App.css';
 function App() {
   function formSubmitCallback(event) {
     const data = new FormData(event.target);
@@ -7,10 +8,19 @@ function App() {
       firstName: data.get('firstName'),
       lastName: data.get('lastName'),
       gender: data.get('gender'),
-      firstName: data.get('email'),
-      firstName: data.get('phone'),
+      email: data.get('email'),
+      phone: data.get('phone'),
+      dateOfBirth: data.get('dateOfBirth'),
+      languages: data.get('lastName'),
+      education: data.get('education'),
+      address: data.get('address'),
+      city: data.get('city'),
+      zip: data.get('zip'),
       // ...
     }
+    axios.post('https://home-work-8eb2a-default-rtdb.firebaseio.com//data.json', {
+      user
+    })
     console.log(user);
     event.preventDefault();
   }
@@ -54,9 +64,7 @@ function App() {
       </div>
       <div>
         <label for="gender">Gender</label>
-        <select name="gender"
-          required
-          id="gender">
+        <select name="gender" required id="gender">
           <option value="">- Select -</option>
           <option value="male">Male</option>
           <option value="female">Female</option>
@@ -129,8 +137,8 @@ function App() {
         <input type="number"
           name="zip"
           id="zip"
-          min="720000"
-          max="740000"
+          min="7"
+          max="9"
           required />
       </div>
       <div>
