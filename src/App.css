@@ -1,32 +1,31 @@
-form > div{
-    padding: .2rem 1rem;
-  
-  }
-   form > div > label{
+form > div {
+    padding: .2rem .1rem;
+}
+
+form > div > label {
     margin-right: .5rem;
-  }
-  
-  form > div > label::after{
+}
+
+form > div > label::after {
     content: ":";
-  }
-  
-  
-  .error{
+}
+
+/* Stylize validation */
+.error {
     display: none;
-    color: tomato;
+    color: red;
     margin-left: .5rem;
-  }
-  
-  input:valid, 
-  select:valid{
+}
+
+.submitted input:valid,
+.submitted select:valid {
     border: 1px solid green;
-  }
-  
-  input:valid, 
-  select:valid{
-    border: 1px solid tomato;
-  }
-  input:valid + .error, 
-  select:valid + .error{
-   display: none;
-  }
+}
+.submitted input:invalid,
+.submitted select:invalid {
+    border: 1px solid red;
+}
+.submitted input:invalid + .error,
+.submitted select:invalid + .error{
+    display: inline;
+}
